@@ -41,6 +41,8 @@ public class BookTest {
     public void validBookSummary() throws BookNotFoundException{
         assertEquals("BOOK-GRUFF472-The Gruffalo-A mouse taking a walk in the woods",
                 bookService.getBookSummary("BOOK-GRUFF472"));
+        assertEquals("BOOK-WILL987-The Wind In The Willows-With the arrival of spring and fine weather outside,...",
+                bookService.getBookSummary("BOOK-WILL987"));
     }
 
     @Test
@@ -56,7 +58,4 @@ public class BookTest {
         thrown.expectMessage("Book not found for reference :: BOOK-999");
         bookService.getBookSummary("BOOK-999");
     }
-
-
-
 }
